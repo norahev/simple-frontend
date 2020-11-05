@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data Store</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="scripty.js"></script>
+    </head>
+    <body>
+        <div id="searchbox">
+            <input type="text" onkeyup="searchFunction()" name="searchbar" id="searchbar" placeholder="Search"/>
+            <button id="searchbtn"><i class="material-icons">search</i></button>
+
+        </div>
+        <div id="filter">
+            <div class="btn red"><button onclick="filter('all'); show('source-buttons')" id="b-all">All</button> <button class="small-btn" id="small-all">18</button></div>
+            <div class="btn orange active"><button onclick="filter('polls'); show('poll-buttons')" class="active2 big" id="b-poll">Polls</button>
+                 <button class="small-btn active" id="small-poll">8</button></div>
+            <div class="btn blue"><button onclick="filter('int'); show('int-buttons')" id="b-inter">Interviews</button> <button class="small-btn" id="small-inter">10</button></div>
+            <div class="btn green"><button id="b-rep">Reports</button><button class="small-btn" id="small-rep">0</button></div>
+            <button class="save-btn"><i class="material-icons">save_alt</i></button>
+            <button class="pie-btn"><i class="material-icons">pie_chart</i></button>
+        </div>
+        <div id="sources">
+            <div id="src">Source<hr id="line"></div>
+            <div class="source-buttons poll-buttons">
+            <div class="btn yellow active"><button onclick="filter('yakyak')" class="b-yellow">YAKYAK</button>
+                <button class="small-btn yellowb active" id="small-yak" onclick="filter('yakyak')">2</button></div>
+            <div class="btn yellow"><button onclick="filter('venatus')" class="b-yellow">VENATUS</button>
+                <button class="small-btn yellowb" id="small-ven">2</button></div>
+            <div class="btn yellow"><button onclick="filter('webpolls')" class="b-yellow">WEB POLLS</button>
+                <button class="small-btn yellowb" id="small-web">2</button></div>
+            <div class="btn yellow"><button onclick="filter('kidoz')" class="b-yellow">KIDOZ</button>
+                <button class="small-btn yellowb" id="small-kid">2</button></div>
+            </div>
+            <div class="source-buttons int-buttons">
+                <div class="btn blue"><button onclick="filter('times')" class="b-blue">TIMES</button>
+                    <button class="small-btn blueb" id="small-tim" onclick="filter('times')">4</button></div>
+                <div class="btn blue"><button onclick="filter('glamour')" class="b-blue">GLAMOUR</button>
+                    <button class="small-btn blueb" id="small-gl">2</button></div>
+                <div class="btn blue"><button onclick="filter('kids')" class="b-blue">KIDS</button>
+                    <button class="small-btn blueb" id="small-ki">4</button></div>
+                </div>
+        </div>
+        <div class="bigbox">
+            <div class="headtable">
+            </div>
+            <div class="cont">
+                <table class="table table-hover" id="table">
+                    <tr>
+                        <th></th>
+                        <th colspan="2">Name</th>
+                        <th colspan="2">Category</th>
+                        <th colspan="2">Date</th>
+                        <th colspan="2">Participants</th>
+                        <th colspan="2">Type</th>
+                        <th colspan="2"></th>
+                        <tbody class="tbody" id="page1">
+                    <tr class="all polls yakyak">
+                        <td><input type="checkbox" class="checkbox"><button class="dropdown" id="1btn" onclick="dropdown('first')">
+                            <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                        <td colspan="2">Youtube</td>
+                        <td colspan="2"><div class="p">P</div></td>
+                        <td colspan="2">23.04.2020</td>
+                        <td colspan="2">233</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                            <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                        </tr>
+                        <tr class="all first polls yakyak">
+                            <td><input type="checkbox" class="checkbox-right"></td>
+                            <td colspan="2">Which music do youtubers like?</td>
+                            <td colspan="2"><div class="p">P</div></td>
+                            <td colspan="2">23.04.2020</td>
+                            <td colspan="2">190</td>
+                            <td colspan="2">4 images</td>
+                            <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                                <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                        </tr>
+                        <tr class="all first polls yakyak">
+                            <td><input type="checkbox" class="checkbox-right"></td>
+                            <td colspan="2">Is youtube good?</td>
+                            <td colspan="2"><div class="p">P</div></td>
+                            <td colspan="2">23.04.2020</td>
+                            <td colspan="2">233</td>
+                            <td colspan="2">2 images</td>
+                            <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                                <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                        </tr>
+                    <tr class="all polls venatus">
+                        <td><input type="checkbox" class="checkbox"><button class="dropdown" id="2btn">
+                            <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                        <td colspan="2">Famous youtuber</td>
+                        <td colspan="2"><div class="p">P</div></td>
+                        <td colspan="2">20.03.2020</td>
+                        <td colspan="2">190</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                            <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                    </tr>
+                    <tr class="all polls webpolls">
+                        <td><input type="checkbox" class="checkbox"><button class="dropdown" id="3btn">
+                            <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                        <td colspan="2">Youtube ranks</td>
+                        <td colspan="2"><div class="p">P</div></td>
+                        <td colspan="2">09.05.2020</td>
+                        <td colspan="2">200</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                            <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                    </tr>
+                    <tr class="all polls kidoz">
+                        <td><input type="checkbox" class="checkbox"><button class="dropdown" id="4btn">
+                            <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                        <td colspan="2">Best activity on youtube</td>
+                        <td colspan="2"><div class="p">P</div></td>
+                        <td colspan="2">09.05.2020</td>
+                        <td colspan="2">200</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                            <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                    </tr>
+                    <tr class="all polls kidoz">
+                        <td><input type="checkbox" class="checkbox"><button class="dropdown" id="5btn">
+                            <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                        <td colspan="2">Video games on youtube</td>
+                        <td colspan="2"><div class="p">P</div></td>
+                        <td colspan="2">09.05.2020</td>
+                        <td colspan="2">250</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                            <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                    </tr>
+                    <tr class="all polls webpolls">
+                        <td><input type="checkbox" class="checkbox"><button class="dropdown" id="6btn">
+                            <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                        <td colspan="2">Youtube videos</td>
+                        <td colspan="2"><div class="p">P</div></td>
+                        <td colspan="2">09.05.2020</td>
+                        <td colspan="2">222</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                            <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                    </tr>
+                    <tr class="all polls venatus">
+                        <td><input type="checkbox" class="checkbox"><button class="dropdown" id="7btn">
+                            <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                        <td colspan="2">Youtube preferences</td>
+                        <td colspan="2" ><div class="p">P</div></td>
+                        <td colspan="2">09.05.2020</td>
+                        <td colspan="2">170</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                            <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                    </tr>
+                    <tr class="all polls yakyak">
+                        <td><input type="checkbox" class="checkbox"><button class="dropdown" id="8btn">
+                            <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                        <td colspan="2">Best youtube videos</td>
+                        <td colspan="2"><div class="p">P</div></td>
+                        <td colspan="2">09.05.2020</td>
+                        <td colspan="2">200</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                            <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                    </tr>
+                    </tbody>
+                    <tbody class="tbody" id="page2">
+                        <tr class="all int times">
+                            <td><input type="checkbox" class="checkbox"><button class="dropdown" id="1btni" onclick="dropdown('firsti')">
+                                <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                            <td colspan="2">Youtube</td>
+                            <td colspan="2"><div class="i">I</div></td>
+                            <td colspan="2">23.04.2020</td>
+                            <td colspan="2">233</td>
+                            <td colspan="2"></td>
+                            <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                                <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                            </tr>
+                            <tr class="all firsti int times">
+                                <td><input type="checkbox" class="checkbox-right">
+                                <td colspan="2">Which music do youtubers like?</td>
+                                <td colspan="2"><div class="i">I</div></td>
+                                <td colspan="2">23.04.2020</td>
+                                <td colspan="2">190</td>
+                                <td colspan="2">4 images</td>
+                                <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                                    <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                            </tr>
+                            <tr class="all firsti int times">
+                                <td><input type="checkbox" class="checkbox-right">
+                                <td colspan="2">Is youtube good?</td>
+                                <td colspan="2"><div class="i">I</div></td>
+                                <td colspan="2">23.04.2020</td>
+                                <td colspan="2">233</td>
+                                <td colspan="2">2 images</td>
+                                <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                                    <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                            </tr>
+                        <tr class="all int glamour">
+                            <td><input type="checkbox" class="checkbox"><button class="dropdown" id="2btni">
+                                <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                            <td colspan="2">Famous youtuber</td>
+                            <td colspan="2"><div class="i">I</div></td>
+                            <td colspan="2">20.03.2020</td>
+                            <td colspan="2">190</td>
+                            <td colspan="2"></td>
+                            <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                                <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                        </tr>
+                        <tr class="all int glamour">
+                            <td><input type="checkbox" class="checkbox"><button class="dropdown" id="3btni">
+                                <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                            <td colspan="2">Youtube ranks</td>
+                            <td colspan="2"><div class="i">I</div></td>
+                            <td colspan="2">09.05.2020</td>
+                            <td colspan="2">200</td>
+                            <td colspan="2"></td>
+                            <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                                <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                        </tr>
+                        <tr class="all int kids">
+                            <td><input type="checkbox" class="checkbox"><button class="dropdown" id="4btni">
+                                <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                            <td colspan="2">Best activity on youtube</td>
+                            <td colspan="2"><div class="i">I</div></td>
+                            <td colspan="2">09.05.2020</td>
+                            <td colspan="2">200</td>
+                            <td colspan="2"></td>
+                            <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                                <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                        </tr>
+                        <tr class="all int kids">
+                            <td><input type="checkbox" class="checkbox"><button class="dropdown" id="5btni">
+                                <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                            <td colspan="2">Video games on youtube</td>
+                            <td colspan="2"><div class="i">I</div></td>
+                            <td colspan="2">09.05.2020</td>
+                            <td colspan="2">250</td>
+                            <td colspan="2"></td>
+                            <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                                <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                        </tr>
+                        <tr class="all int kids">
+                            <td><input type="checkbox" class="checkbox"><button class="dropdown" id="6btni">
+                                <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                            <td colspan="2">Youtube videos</td>
+                            <td colspan="2"><div class="i">I</div></td>
+                            <td colspan="2">09.05.2020</td>
+                            <td colspan="2">222</td>
+                            <td colspan="2"></td>
+                            <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                                <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                        </tr>
+                        <tr class="all int times">
+                            <td><input type="checkbox" class="checkbox"><button class="dropdown" id="7btni">
+                                <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                            <td colspan="2">Youtube preferences</td>
+                            <td colspan="2" ><div class="i">I</div></td>
+                            <td colspan="2">09.05.2020</td>
+                            <td colspan="2">170</td>
+                            <td colspan="2"></td>
+                            <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                                <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                        </tr>
+                        <tr class="all int kids">
+                            <td><input type="checkbox" class="checkbox"><button class="dropdown" id="8btni">
+                                <i class="material-icons arrow">arrow_drop_down</i></button></td>
+                            <td colspan="2">Best youtube videos</td>
+                            <td colspan="2"><div class="i">I</div></td>
+                            <td colspan="2">09.05.2020</td>
+                            <td colspan="2">200</td>
+                            <td colspan="2"></td>
+                            <td colspan="2"><button class="save-btn-s"><i class="material-icons">save_alt</i></button>
+                                <button class="pie-btn-s"><i class="material-icons">pie_chart</i></button></td>
+                        </tr>
+                        </tbody>
+            </table>
+            </div>
+            </div>
+            <div class='all-buttons' id="pagebuttons">
+            <button class="pagebutton">1</button>
+            <button class="pagebutton">2</button>
+            <button class="pagebutton">3</button>
+            <button class="pagebutton">4</button>
+            </div>
+    </body>
+</html>
